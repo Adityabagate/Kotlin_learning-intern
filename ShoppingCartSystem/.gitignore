@@ -1,0 +1,18 @@
+# Android Studio / IntelliJ
+.idea/
+.gradle/
+.kotlin/
+
+# Local configuration
+local.properties
+
+# Build folders
+build/
+**/build/
+
+# IntelliJ
+*.iml
+out/
+
+# macOS
+.DS_Store

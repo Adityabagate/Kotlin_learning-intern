@@ -1,18 +1,15 @@
-# Android Studio / IntelliJ
+# Android Studio
 .idea/
-.gradle/
-.kotlin/
 
-# Local configuration
-local.properties
-
-# Build folders
-build/
+# Gradle build folders
 **/build/
 
-# IntelliJ
-*.iml
-out/
+# Local SDK path
+local.properties
 
-# macOS
+# Gradle cache
+.gradle/
+
+# OS files
 .DS_Store
+Thumbs.db
