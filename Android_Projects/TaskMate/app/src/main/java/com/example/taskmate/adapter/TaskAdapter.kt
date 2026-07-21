@@ -10,9 +10,9 @@ import com.example.taskmate.R
 import com.example.taskmate.model.Task
 
 
-class TaskAdapter(
+   class TaskAdapter(
     private val taskList: ArrayList<Task>
-) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+        ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
 
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -46,11 +46,27 @@ class TaskAdapter(
         holder.title.text = task.title
         holder.description.text = task.description
         holder.checkBox.isChecked = task.isCompleted
+        if(task.isCompleted){
+
+            holder.title.paintFlags =
+                holder.title.paintFlags or
+                        android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
+
+        }
+        else{
+
+            holder.title.paintFlags =
+                holder.title.paintFlags and
+                        android.graphics.Paint.STRIKE_THRU_TEXT_FLAG.inv()
+
+        }
 
 
         holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
 
             task.isCompleted = isChecked
+
+            notifyItemChanged(position)
 
         }
 
